@@ -1,2 +1,14 @@
 out/
 .vc/
+.vs/CMakeProject1/v16/.suo
+.vs/CMakeProject1/v16/Browse.VC.opendb
+.vs/CMakeProject1/v16/ipch/AutoPCH/67ae0179d400309/MAIN.ipch
+.vs/CMakeProject1/v16/ipch/AutoPCH/c59435eed7516359/MAIN.ipch
+.vs/CMakeProject1/v16/ipch/AutoPCH/ecb7d914f91068a5/BIN-IMAGE.ipch
+.vs/slnx.sqlite
+out/build/x64-Debug/.cmake/api/v1/reply/cache-v2-e810f0d98f4e38218be9.json
+out/build/x64-Debug/.cmake/api/v1/reply/index-2020-04-05T21-40-39-0807.json
+out/build/x64-Debug/.ninja_deps
+out/build/x64-Debug/.ninja_log
+out/build/x64-Debug/CMakeCache.txt
+out/build/x64-Debug/rules.ninja
