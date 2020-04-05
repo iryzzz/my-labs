@@ -1,0 +1,203 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "libutils",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "libutils",
+					"targetIndexes" : 
+					[
+						5,
+						6
+					]
+				},
+				{
+					"build" : "lab-1-encapsulation",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "lab-1-encapsulation",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "lab-2-operator-overload",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "lab-2-operator-overload",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "lab-3-st-polymorph",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "lab-3-st-polymorph",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "lab-4-dn-polymorph",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "lab-4-dn-polymorph",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "lab-6-sorts",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "lab-6-sorts",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					],
+					"name" : "TMP",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "lab-1-encapsulation::@e156c81998bc2c6d7d60",
+					"jsonFile" : "target-lab-1-encapsulation-Debug-0df8e8335e687e023cad.json",
+					"name" : "lab-1-encapsulation",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "lab-2-operator-overload::@b05d02418b28ee8a9571",
+					"jsonFile" : "target-lab-2-operator-overload-Debug-bf9f5ae145c74015861a.json",
+					"name" : "lab-2-operator-overload",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "lab-3-st-polymorph::@cb1f99f2db20a95ff04c",
+					"jsonFile" : "target-lab-3-st-polymorph-Debug-ef22b06f791801e8448b.json",
+					"name" : "lab-3-st-polymorph",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "lab-4-dn-polymorph::@efbebb8e0dabc8c51711",
+					"jsonFile" : "target-lab-4-dn-polymorph-Debug-03f2b3be90d0e1cb56c5.json",
+					"name" : "lab-4-dn-polymorph",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "lab-6-sorts::@4b3be6a999dde73f3cb2",
+					"jsonFile" : "target-lab-6-sorts-Debug-609aff64157e06161781.json",
+					"name" : "lab-6-sorts",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "utils_shared::@8ddf382a533215aae23d",
+					"jsonFile" : "target-utils_shared-Debug-7ca0e5d12f06724dae87.json",
+					"name" : "utils_shared",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "utils_static::@8ddf382a533215aae23d",
+					"jsonFile" : "target-utils_static-Debug-81c02cd60a4a0f161b8f.json",
+					"name" : "utils_static",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/ilya2/source/repos/CMakeProject1/out/build/x64-Debug",
+		"source" : "C:/Users/ilya2/source/repos/CMakeProject1"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}
