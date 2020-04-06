@@ -1,6 +1,5 @@
 #include <cstdio>
 #include <stdlib.h>
-#include <conio.h>
 #include <libutils/io.h>
 #include "bin-image.h"
 #include <iostream>
@@ -9,7 +8,7 @@ extern bool trace = false;
 
 using namespace std;
 
-void main() {
+int main() {
 	auto columns1 = utils::readInt("Enter amount of pixel columns in image 1: ", 0, 64);
 	auto lines1 = utils::readInt("Enter amount of pixel lines in image 1: ", 0, 64);
 	auto columns2 = utils::readInt("Enter amount of pixel columns in image 2: ", 0, 64);

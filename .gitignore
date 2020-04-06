@@ -6,6 +6,8 @@ out/
 .vs/CMakeProject1/v16/ipch/AutoPCH/c59435eed7516359/MAIN.ipch
 .vs/CMakeProject1/v16/ipch/AutoPCH/ecb7d914f91068a5/BIN-IMAGE.ipch
 .vs/slnx.sqlite
-out/build/x64-Debug/
+out/build/x64-Debug
+cmake-build-debug/
 id_rsa.pub
 id_rsa.pub.pub
+/.idea/

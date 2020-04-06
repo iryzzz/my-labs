@@ -32,7 +32,7 @@ T sum(T x, T y) {
 	return x + y;
 }
 
-void main () {
+int main () {
 	int i = 1;
 	int j = 2;
 	int a = sum(i, j);

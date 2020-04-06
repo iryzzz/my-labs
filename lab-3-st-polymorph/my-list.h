@@ -53,7 +53,7 @@ public:
 		return copy;
 	}
 	IteratorList& operator-(int num) {
-		if (_node == nullptr)|| throw 404;
+		if (_node == nullptr) throw 404;
 		for (int i = 0; i < num; ++i)
 			_node = _node->_prev;
 		return *this;
@@ -127,7 +127,7 @@ public:
 	}
 	
 	List<T>& operator=(List<T>&& obj) noexcept {
-		if (*this != list) {
+		if (*this != obj) {
 			delete _head;
 			_head = obj._head;
 			_size = obj._size;

@@ -241,8 +241,8 @@ double sumSquares(vector<shared_ptr<Figure>>& collection)
 }
 
 
-void main() {
-	vector<shared_ptr<Figure>> collection; //создание массива указателей на базовый класс
+int main() {
+	vector<shared_ptr<Figure>> collection; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 	while (true) {
 		system("cls");
 		try {
@@ -332,7 +332,7 @@ void main() {
 				break;
 			}
 			case 10: {
-				if (collection.empty())  throw "Empy collection!!";
+				if (collection.empty())  throw "Empty collection!!";
 				collection.clear();
 				cout << "Collection cleared\n" << endl;
 				cout << "Press any key to continue" << endl;
@@ -340,7 +340,7 @@ void main() {
 				break;
 			}
 			case 0: {
-				return;
+				return 0;
 			}
 			}
 		}
@@ -348,5 +348,5 @@ void main() {
 			cout << er << endl;
 		}
 	}
-	return;
+	return 0;
 }

@@ -208,7 +208,6 @@ const bool Image::operator()(const int& line, const int& column) const {
 	}
 	catch (int i) {
 		cout << "Error " << i << ": requested pixel does not founded";
-		return nullptr;
 	}
 }
 
