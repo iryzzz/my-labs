@@ -7,3 +7,5 @@ out/
 .vs/CMakeProject1/v16/ipch/AutoPCH/ecb7d914f91068a5/BIN-IMAGE.ipch
 .vs/slnx.sqlite
 out/build/x64-Debug/
+id_rsa.pub
+id_rsa.pub.pub
