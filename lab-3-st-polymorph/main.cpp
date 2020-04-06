@@ -9,6 +9,7 @@
 #include <list>
 #include <memory>
 
+
 //template<typename T> using CollectionType = Vector<T>;
 //template<typename T> using CollectionType = std::vector<T>;
 template<typename T> using CollectionType = List<T>;
