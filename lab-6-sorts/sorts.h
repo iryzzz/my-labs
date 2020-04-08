@@ -117,10 +117,12 @@ void mergeSort (T* arr, const size_t size) {
                 } while (tmp[j+1]<=tmp[j]);
             }
             goAgain=true;
+            std::swap(k, l);
+            d = -d;
         }
-        s = !s;
+        if (goAgain)
+            s = !s;
         tmp[k] = tmp[i];
-        d = -d;
     } while (goAgain);
     if (s) {
         for (int i = 0; i < size; ++i)
