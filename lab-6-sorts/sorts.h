@@ -17,8 +17,8 @@ void bubbleSort(T* arr, const size_t size) {
     auto isSwapped = false;
     for (size_t i=0; i<size; ++i) {
         isSwapped=false;
-        for (size_t j=0; j<size-i; ++j) {
-            if (arr[j]>arr[j+1]) {
+        for (size_t j=0; j<size-1; ++j) {
+            if (arr[j+1]>arr[j]) {
                 std::swap(arr[j], arr[j + 1]);
                 isSwapped = true;
             }
@@ -70,67 +70,64 @@ void qSort(T* arr, const size_t size) {
 }
 
 template <typename T>
-void mergeSort (T* arr, const size_t size) {
-    T* tmp = new T [size * 2];
-    auto s = false;
-    bool goAgain;
-    for (int i=0; i<size; ++i) {
-        tmp[i]=arr[i];
-    }
-    int i, j, k, l;
-    do {
-        auto d = 1;
-        goAgain = false;
-        if (!s) {
-            i = 0;
-            j = (size - 1);
-            k = size;
-            l = (2 * size -1);
-        }
-        else {
-            i = size;
-            j = (2 * size - 1);
-            k = 0;
-            l = (size - 1);
-        }
-        while (i != j) {
-            if (tmp[i] > tmp[j]) {
-                tmp[k]=tmp[j];
-                k+=d;
-                --j;
-                if (tmp[j+1]<=tmp[j]) continue;
-                do {
-                    tmp[k] = tmp[i];
-                    k+=d;
-                    ++i;
-                } while (tmp[i-1]<=tmp[i]);
-            }
-            else {
-                tmp[k]=tmp[i];
-                k+=d;
-                ++i;
-                if (tmp[i-1]<=tmp[i]) continue;
-                do {
-                    tmp[k] = tmp[j];
-                    k+=d;
-                    --j;
-                } while (tmp[j+1]<=tmp[j]);
-            }
-            goAgain=true;
-            std::swap(k, l);
-            d = -d;
-        }
-        if (goAgain)
-            s = !s;
-        tmp[k] = tmp[i];
-    } while (goAgain);
-    if (s) {
-        for (int i = 0; i < size; ++i)
-            arr[i] = tmp[i];
-    }
-    else {
-        for (int i = 0; i < size; ++i)
-            arr[i] = tmp[i + size];
-    }
-    delete[] tmp;
+void mergeSort(T* arr, const size_t size)
+{
+	T* tmp = new T[size * 2];
+	for (int i = 0; i < size; ++i)
+		tmp[i] = arr[i];
+	auto s = true;
+	bool goAgain;
+	int i, j, k, l;
+	do {
+		if (s) {
+			i = 0;
+			j = size - 1;
+			k = size;
+			l = 2 * size - 1;
+		}
+		else {
+			i = size;
+			j = 2 * size - 1;
+			k = 0;
+			l = size - 1;
+		}
+		auto d = 1;
+		goAgain = false;
+		while (i != j) {
+			if (tmp[i] < tmp[j]) {
+				tmp[k] = tmp[i];
+				k += d;
+				++i;
+				if (tmp[i - 1] <= tmp[i]) continue;
+				do {
+					tmp[k] = tmp[j];
+					k += d;
+					--j;
+				} while (tmp[j + 1] <= tmp[j]);
+			}
+			else {
+				tmp[k] = tmp[j];
+				k += d;
+				--j;
+				if (tmp[j + 1] <= tmp[j]) continue;
+				do {
+					tmp[k] = tmp[i];
+					k += d;
+					++i;
+				} while (tmp[i - 1] <= tmp[i]);
+			}
+			goAgain = true;
+		}
+		tmp[k] = tmp[i];
+		s = !s;
+		d = -d;
+		std::swap(k, l);
+	} while (goAgain);
+	if (s)
+		for (int x = 0; x < size; ++x)
+			arr[x] = tmp[x];
+	else
+		for (int x = 0; x < size; ++x)
+			arr[x] = tmp[x + size];
+	delete[] tmp;
 }
