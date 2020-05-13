@@ -39,12 +39,24 @@ public:
 	UnorderedSet& operator=(const UnorderedSet&) = delete;
 
 	~UnorderedSet() {
-		// clear();
+		clear();
 		delete[] _table;
 	}
 
 	void clear() {
-
+		Node* crnt;
+		for (auto i = 0; i < _count; ++i) {
+			crnt = _table[i];
+			if (_table[i]) {
+				while (crnt) {
+					auto tmp = crnt;
+					crnt = crnt->next;
+					delete tmp;
+					tmp = nullptr;
+				}
+				_table[i] = nullptr;
+			}
+		}
 	}
 
 	bool insert(const TKey& key) {
@@ -69,5 +81,18 @@ public:
 		*node = (*node)->next;
 		delete tmp;
 		return true;
+	}
+	void print() {
+		Node** node;
+		for (auto i = 0; i < _count; ++i) {
+			if (_table[i]) {
+				node = _table + i;
+				while (*node) {
+					std::cout << "[Hash: " << i << " | Value: " << (*node)->key << "]  ";
+					node = &((*node)->next);
+				}		
+				std::cout << std::endl;
+			}
+		}
 	}
 };
