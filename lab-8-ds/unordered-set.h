@@ -13,7 +13,7 @@ class UnorderedSet {
 	Node** _table;
 	const std::size_t _count;
 
-	Node** find(const TKey& key) {
+	Node** Find(const TKey& key) {
 		const auto i = TKeyHash()(key) % _count;
 		auto node = _table + i;
 		while (*node) {
@@ -26,7 +26,7 @@ class UnorderedSet {
 	}
 
 public:
-	static const size_t DEFAULT_SIZE = 17;
+	static const size_t DEFAULT_SIZE = 10000;
 
 	UnorderedSet() : _table(new Node* [DEFAULT_SIZE]), _count(DEFAULT_SIZE) {
 		for (std::size_t i = 0; i < _count; ++i) {
@@ -37,6 +37,10 @@ public:
 	UnorderedSet(const UnorderedSet&) = delete;
 
 	UnorderedSet& operator=(const UnorderedSet&) = delete;
+
+	UnorderedSet(const UnorderedSet&&) = delete;
+
+	UnorderedSet& operator=(const UnorderedSet&&) = delete;
 
 	~UnorderedSet() {
 		clear();
@@ -60,7 +64,7 @@ public:
 	}
 
 	bool insert(const TKey& key) {
-		auto node = find(key);
+		auto node = Find(key);
 		if (*node != nullptr) {
 			return false;
 		}
@@ -69,11 +73,11 @@ public:
 	}
 
 	bool contains(const TKey& key) {
-		return *find(key) != nullptr;
+		return *Find(key) != nullptr;
 	}
 
-	bool remove(const TKey& key) {
-		auto node = find(key);
+	bool erase (const TKey& key) {
+		auto node = Find(key);
 		if (*node == nullptr) {
 			return false;
 		}
@@ -82,6 +86,11 @@ public:
 		delete tmp;
 		return true;
 	}
+
+	bool find (const TKey& key) {
+		return (*(Find(key)) != nullptr);
+	}
+
 	void print() {
 		Node** node;
 		for (auto i = 0; i < _count; ++i) {
@@ -94,5 +103,6 @@ public:
 				std::cout << std::endl;
 			}
 		}
+		std::cout << std::endl;
 	}
 };
