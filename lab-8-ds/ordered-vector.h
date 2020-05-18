@@ -85,48 +85,25 @@ class IteratorVector final {
 template<typename T>
 class OrderedVector {
 	T* _arr;
-	size_t _size;
-
-	//IteratorVector<T> binarySearch(const T& elem) {
-	//	int left = 0;
-	//	int right = _size;
-	//	size_t mid;
-	//	try {
-	//		while (left <= right) {
-	//			mid = (left + right) / 2;
-	//			if ((left == right) && (elem != _arr[mid])) throw 404;
-	//			if (elem == _arr[mid]) {
-	//				return IteratorVector<T>(_arr + mid);
-	//			}
-	//			if (elem < _arr[mid])
-	//				right = mid - 1;
-	//			else
-	//				left = mid + 1;
-	//		}
-	//	}
-	//	catch (int i) {
-	//		std::cout << "Error " << i << ": not found" << std::endl;
-	//	}
-	//	return IteratorVector<T>(nullptr);
-	//}
+	std::size_t _size;
 
 	IteratorVector<T> binarySearch(const T& value) {
 		if (_size == 0) return IteratorVector<T>(nullptr);
-		bool flag = false;
+		bool isFound = false;
 		int left = 0;
 		int right = _size - 1;
 		int idx = 0;
 		while (left <= right) {
 			idx = (left + right) / 2;
 			if (_arr[idx] == value) {
-				flag = true; //найден
+				isFound = true; 
 				break;
 			}
 			if (_arr[idx] > value) right = idx - 1;
 			else left = idx + 1;
 		}
 
-		if (flag == true) return IteratorVector<T>(_arr + idx);
+		if (isFound == true) return IteratorVector<T>(_arr + idx);
 		else return IteratorVector<T>(nullptr);
 	}
 
@@ -136,7 +113,7 @@ public:
 
 	OrderedVector() :_arr(nullptr), _size(0) {}
 
-	OrderedVector(size_t _size) : _arr(new T[_size]), _size(_size) {}
+	OrderedVector(std::size_t _size) : _arr(new T[_size]), _size(_size) {}
 
 	OrderedVector(const OrderedVector<T>& obj) : _arr(new T[obj._size]), _size(obj._size) {
 		for (auto i = 0; i < _size; ++i) {
@@ -174,7 +151,7 @@ public:
 		clear();
 	}
 
-	size_t size()const noexcept {
+	std::size_t size()const noexcept {
 		return _size;
 	}
 
@@ -191,57 +168,6 @@ public:
 		_arr = nullptr;
 		_size = 0;
 	}
-
-	//IteratorVector<T> insert (const T& elem) {
-	//	if (_size == 0) {
-	//		T* tmp = new T[++_size];
-	//		delete[] _arr;
-	//		_arr = tmp;
-	//		_arr[0] = elem;
-	//		return IteratorVector<T>(_arr);
-	//	}
-	//	if (_size == 1) {
-	//		T* tmp = new T[++_size];
-	//		if (_arr[0] > elem) {
-	//			tmp[0] = elem;
-	//			tmp[1] = _arr[0];
-	//		}
-	//		delete[] _arr;
-	//		_arr = tmp;
-	//		return IteratorVector<T>(_arr+1);
-	//	}
-	//	auto left = 0;
-	//	auto right = (_size - 1);
-	//	size_t mid = _size / 2;
-	//	while (left <= right) {
-	//		mid = ((left + right) / 2);
-	//		if (((_arr[mid] < elem) && (elem <= _arr[mid + 1])) || mid == 0)
-	//			break;
-	//		if (elem < _arr[mid])
-	//			right = mid - 1;
-	//		else
-	//			left = mid + 1;
-	//	}
-	//	T* tmp = new T[++_size];
-	//	auto k = 0;
-	//	for (auto i = 0; i < _size; ++i) {
-	//		if (i == (mid)) {
-	//			tmp[i] = elem;
-	//		}
-	//		else {
-	//			tmp[i] = _arr[k];
-	//			++k;
-	//		}
-	//	}
-	//	delete[] _arr;
-	//	_arr = tmp;
-	//	return IteratorVector<T>(_arr + (mid + 1));
-	//}
-
-	//void erase(const T& elem) {
-	//	auto t = binarySearch(elem);
-	//	erase(t);
-	//}
 
 	bool find(const T& elem) {
 		return (binarySearch(elem) != IteratorVector<T>(nullptr));
@@ -291,7 +217,7 @@ public:
 		if (_arr == nullptr)
 			return IteratorVector<T>(nullptr);
 		T* newData = new T[_size - 1];
-		if (newData == nullptr)  //если память не выделилась
+		if (newData == nullptr)
 			return IteratorVector<T>(nullptr);
 		IteratorVector<T> current = binarySearch(value);
 		if (current == IteratorVector<T>(nullptr))

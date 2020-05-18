@@ -14,7 +14,7 @@ template<typename T> using StructureType = OrderedVector<T>;
 int main() {
 	srand(time(0));
 	chrono::steady_clock time;
-	auto n = 200;
+	auto n = 3200;
 	cout << "Amount of elements: " << n << endl;
 	{
 		StructureType<int> structure1;
@@ -45,9 +45,11 @@ int main() {
 		for (auto i = 0; i < n; ++i) {
 			structure1.insert(rand() % 10000);
 		}
+		//structure1.print();
 		auto start = time.now();
 		structure1.erase(rand() % 10000);
 		auto end = time.now();
+		//structure1.print();
 		chrono::duration<double> diff = end - start;
 		cout << "Erasing time: " << diff.count() / 100 << endl;
 	}

@@ -4,5 +4,3 @@ main.cpp
 ordered-vector.h
 unordered-set.h
 ordered-set.h)
-
-target_link_libraries(lab-8-ds utils_static)

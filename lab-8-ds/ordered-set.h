@@ -9,13 +9,13 @@ class OrderedSet {
 		T key;
 		Node* left;
 		Node* right;
-		size_t height;
+		std::size_t height;
 		Node(const T& key) : key(key), left(nullptr), right(nullptr),
 			height(1) {}
 	};
 	Node* root;
 
-	size_t getHeight(Node* p) {
+	std::size_t getHeight(Node* p) {
 		return p != nullptr ? p->height : 0;
 	}
 
